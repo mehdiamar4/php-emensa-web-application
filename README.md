@@ -1,58 +1,116 @@
-# 🍽️ E-Mensa — University Canteen Web Application
+# E-Mensa
 
-**Author:** Malek Bouaziz · Ahmed Mehdi Amar
-**Course:** Web Development · Praktikum
-**Language:** PHP 8.2 · MySQL · Blade Templating
+E-Mensa is a university canteen web application built with **PHP 8.2**, **MySQL**, and **Blade templating**.  
+It allows users to browse canteen dishes, log in with their account, and access personalized content.
 
-A full-stack web application for a university canteen. Users can browse
-daily dishes, log in with their account, and view personalized content.
-Built with a custom MVC framework and Blade templating engine.
+This project was developed as part of a web development practical course and focuses on backend logic, templating, routing, and user authentication.
 
 ---
 
-## ⚙️ Features
+## Features
 
 - Browse and display canteen dishes from a MySQL database
-- User authentication with SHA-1 + salt hashing and PHP sessions
-- Login / logout with session management
-- Custom front controller and URL router
-- Blade templating with layouts and reusable views
-- Prepared statements (mysqli) for SQL injection prevention
-- Monolog logging for requests and errors
+- User login and logout with session management
+- Personalized content for logged-in users
+- Custom front controller and URL routing
+- Blade templating with reusable layouts and views
+- Prepared SQL statements for safer database queries
+- Request and error logging with Monolog
 
 ---
 
-## 🗂️ Project Structure
-├── config/          # Database connection
-├── controllers/     # HomeController, AnmeldungController, AbmeldungController
-├── models/          # SQL functions: benutzer, gericht, kategorie
-├── views/           # Blade templates (home, login, layouts)
-├── routes/web.php   # URL → Controller mappings
-├── public/
-│   ├── index.php    # Front controller + router entry point
-│   ├── css/         # Custom styles
-│   └── img/         # Dish images and logo
-└── composer.json    # Dependencies (BladeOne, Monolog)
+## Technologies Used
+
+- PHP 8.2
+- MySQL
+- BladeOne
+- Composer
+- Monolog
+- HTML / CSS
 
 ---
 
-## 🚀 Getting Started
+## Project Structure
 
-**Requirements:** PHP 8.2+, MySQL, Composer
-```bash
-composer install
-php -S localhost:8000 -t public
-```
-
-Then open `http://localhost:8000` in your browser.
-
+    config/              database connection
+    controllers/         application controllers
+    models/              database queries and business logic
+    views/               Blade templates and layouts
+    routes/web.php       route definitions
+    public/index.php     front controller
+    public/css/          stylesheets
+    public/img/          images and assets
+    composer.json        dependencies
 
 ---
 
-## 🧠 Concepts
+## How It Works
 
-- MVC pattern with custom routing (no framework)
-- Blade templating via BladeOne library
-- Secure login with hashed passwords and PHP sessions
-- Parameterized SQL queries with mysqli
-- Monolog structured logging
+The application follows a custom MVC-style structure.
+
+### Routing and Controllers
+
+Requests are handled through a front controller and mapped to the correct controller using custom route definitions.
+
+### Database Interaction
+
+Dish data and user data are loaded from a MySQL database.  
+Prepared statements are used to execute database queries more safely.
+
+### Authentication
+
+Users can log in and log out through a session-based authentication system.  
+Passwords are stored using SHA-1 with salt, following the project requirements.
+
+### Templating
+
+The frontend is rendered using Blade templates with reusable layouts and views, which helps keep the code organized and easier to maintain.
+
+### Logging
+
+Monolog is used to log requests and errors, making debugging and monitoring easier.
+
+---
+
+## Getting Started
+
+### Requirements
+
+- PHP 8.2 or higher
+- MySQL
+- Composer
+
+### Install dependencies
+
+    composer install
+
+### Start the local server
+
+    php -S localhost:8000 -t public
+
+Then open:
+
+    http://localhost:8000
+
+in your browser.
+
+---
+
+## What I Learned
+
+With this project, I practiced:
+
+- building a web application with PHP and MySQL
+- structuring an application with MVC principles
+- implementing routing and controllers without a full framework
+- working with Blade templating and reusable layouts
+- handling login, logout, and session-based authentication
+- using prepared statements for safer SQL queries
+- organizing dependencies with Composer
+
+---
+
+## Author
+
+Malek Bouaziz  
+Ahmed Mehdi Amar
